@@ -104,7 +104,6 @@ public class SwiftRecordPlugin: NSObject, FlutterPlugin, AVAudioRecorderDelegate
         AVLinearPCMBitDepthKey: 16,
         AVLinearPCMIsBigEndianKey:false,
         AVLinearPCMIsFloatKey:false,
-        AVLinearPCMIsNonInterleaved: true,
         AVNumberOfChannelsKey: 1,
     ] as [String : Any]
 
