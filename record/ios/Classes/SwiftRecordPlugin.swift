@@ -98,11 +98,14 @@ public class SwiftRecordPlugin: NSObject, FlutterPlugin, AVAudioRecorderDelegate
     stopRecording()
 
     let settings = [
-      AVFormatIDKey: getEncoder(encoder),
-      AVEncoderBitRateKey: bitRate,
-      AVSampleRateKey: samplingRate,
-      AVNumberOfChannelsKey: 2,
-      AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        AVFormatIDKey: kAudioFormatLinearPCM,
+        AVEncoderBitRateKey: bitRate,
+        AVSampleRateKey: samplingRate,
+        AVLinearPCMBitDepthKey: 16,
+        AVLinearPCMIsBigEndianKey:false,
+        AVLinearPCMIsFloatKey:false,
+        AVLinearPCMIsNonInterleaved: true,
+        AVNumberOfChannelsKey: 1,
     ] as [String : Any]
 
     let options: AVAudioSession.CategoryOptions = [.defaultToSpeaker, .allowBluetooth]
